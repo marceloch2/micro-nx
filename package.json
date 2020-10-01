@@ -27,7 +27,6 @@
   },
   "private": true,
   "dependencies": {
-    "@nrwl/react": "^10.2.1",
     "document-register-element": "1.13.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
