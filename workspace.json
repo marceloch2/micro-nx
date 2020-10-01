@@ -7,6 +7,13 @@
       "projectType": "application",
       "schematics": {},
       "architect": {
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/apps/bike-store",
+            "siteId": "e7d12c46-e75a-4a45-80d9-4b47858c1b38"
+          }
+        },
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
@@ -114,6 +121,13 @@
       "projectType": "application",
       "schematics": {},
       "architect": {
+        "deploy": {
+          "builder": "@netlify-builder/deploy:deploy",
+          "options": {
+            "outputPath": "dist/apps/car-store",
+            "siteId": "6559596d-b0f7-425c-8aae-928fa6a83503"
+          }
+        },
         "build": {
           "builder": "@nrwl/web:build",
           "options": {
@@ -210,61 +224,6 @@
             "linter": "eslint",
             "tsConfig": ["apps/car-store-e2e/tsconfig.e2e.json"],
             "exclude": ["**/node_modules/**", "!apps/car-store-e2e/**/*"]
-          }
-        }
-      }
-    },
-    "bike-store-api": {
-      "root": "apps/bike-store-api",
-      "sourceRoot": "apps/bike-store-api/src",
-      "projectType": "application",
-      "prefix": "bike-store-api",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@nrwl/node:build",
-          "options": {
-            "outputPath": "dist/apps/bike-store-api",
-            "main": "apps/bike-store-api/src/main.ts",
-            "tsConfig": "apps/bike-store-api/tsconfig.app.json",
-            "assets": ["apps/bike-store-api/src/assets"]
-          },
-          "configurations": {
-            "production": {
-              "optimization": true,
-              "extractLicenses": true,
-              "inspect": false,
-              "fileReplacements": [
-                {
-                  "replace": "apps/bike-store-api/src/environments/environment.ts",
-                  "with": "apps/bike-store-api/src/environments/environment.prod.ts"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@nrwl/node:execute",
-          "options": {
-            "buildTarget": "bike-store-api:build"
-          }
-        },
-        "lint": {
-          "builder": "@nrwl/linter:lint",
-          "options": {
-            "linter": "eslint",
-            "tsConfig": [
-              "apps/bike-store-api/tsconfig.app.json",
-              "apps/bike-store-api/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**", "!apps/bike-store-api/**/*"]
-          }
-        },
-        "test": {
-          "builder": "@nrwl/jest:jest",
-          "options": {
-            "jestConfig": "apps/bike-store-api/jest.config.js",
-            "passWithNoTests": true
           }
         }
       }

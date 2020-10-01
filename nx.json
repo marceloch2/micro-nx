@@ -32,9 +32,6 @@
       "tags": [],
       "implicitDependencies": ["car-store"]
     },
-    "bike-store-api": {
-      "tags": []
-    },
     "bike-utils": {
       "tags": []
     }
