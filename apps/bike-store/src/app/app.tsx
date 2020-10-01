@@ -10,7 +10,7 @@ export const App = () => {
    */
   return (
     <div className="app">
-      <p>BIKE STORE</p>
+      <p>BIKE STORE xxyy</p>
     </div>
   );
 };
